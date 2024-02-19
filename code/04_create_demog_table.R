@@ -14,10 +14,6 @@
 # Store working directory, check correct R version, load packages ----
 # ---------------------------------------------------------------------------- #
 
-# Store working directory
-
-wd_dir <- getwd()
-
 # Load custom functions
 
 source("./code/01a_define_functions.R")
