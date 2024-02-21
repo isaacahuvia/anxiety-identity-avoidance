@@ -114,33 +114,24 @@ dat3$dass21_as[dat3$dass21_as$session_only == "Eligibility", dass21_as_items] <-
 # Handle unexpected multiple entries ----
 # ---------------------------------------------------------------------------- #
 
-# TODO: Check for other tables
+# Centralized Calm Thinking data cleaning revealed that "oa" table has unexpected
+# multiple entries but identical item responses (just different "time_on_page", so 
+# use "time_on_page_mean" for analysis) and that "task_log" table has unexpected 
+# multiple entries (some reflecting repeat screenings for "dass21_as" table; so use 
+# "time_on_task_mean" for analysis). Centralized cleaning did not find unexpected
+# multiple entries for the other tables analyzed in the present project.
 
-
-
-
-
-# Centralized Calm Thinking data cleaning revealed that "bbsiq" (not used here)
-# and "oa" tables have unexpected multiple entries but identical item responses 
-# (just different "time_on_page", so use "time_on_page_mean" for analysis) and 
-# that "task_log" table has unexpected multiple entries (some reflecting repeat 
-# screenings for "dass21_as" table; so use "time_on_task_mean" for analysis).
-
-# View(dat2$bbsiq[dat2$bbsiq$n_rows > 1, ])
 # View(dat2$oa[dat2$oa$n_rows > 1, ])
 # View(dat2$task_log[dat2$task_log$n_rows > 1, ])
 
 # Remove attempt-specific columns except "X", "id", and date-related columns from
-# "bbsiq" (not used here) and "oa" tables
+# "oa" table
 
-# dat3$bbsiq$time_on_page <- NULL
 dat3$oa$time_on_page <- NULL
 
-# For duplicated rows on "participant_id" and "session_only" for "bbsiq" (not used
-# here) and "oa" tables, keep only last row. Leave "task_log" as it is.
+# For duplicated rows on "participant_id" and "session_only" for "oa" table, keep 
+# only last row. Leave "task_log" as it is.
 
-# dat3$bbsiq <- dat3$bbsiq[!duplicated(dat3$bbsiq[, c("participant_id", "session_only")], 
-#                                      fromLast = TRUE), ]
 dat3$oa <-    dat3$oa[!duplicated(dat3$oa[, c("participant_id", "session_only")], 
                                   fromLast = TRUE), ]
 
@@ -185,17 +176,13 @@ dat3$dass21_as[, dass21_as_items][dat3$dass21_as[, dass21_as_items] == 555] <- N
 # Check response ranges ----
 # ---------------------------------------------------------------------------- #
 
-# TODO: Check for substantive analysis variables
+# Check for substantive analysis variables
 
-all(sort(unique(as.vector(as.matrix(dat3$oa[, oa_items])))) %in% 0:4) # TODO: Prereg says 1:5
+all(sort(unique(as.vector(as.matrix(dat3$oa[, oa_items])))) %in% 0:4)
 
-all(sort(unique(dat3$anxiety_identity$anxiety_identity)) %in% 0:5)    # TODO: May need reverse coding & prereg says 1:6
+all(sort(unique(dat3$anxiety_identity$anxiety_identity)) %in% 0:4)
 all(sort(unique(dat3$mechanisms$comp_act_willing)) %in% 1:7)
 all(sort(unique(dat3$mental_health_history$anxiety_duration)) %in% 0:8)
-
-
-
-
 
 # Check for DASS-21-AS
 
@@ -204,6 +191,13 @@ all(sort(unique(as.vector(as.matrix(dat3$dass21_as[, dass21_as_items])))) %in% 0
 dass21_as_mean_range <- 
   range(sort(unique(as.vector(as.matrix(dat3$dass21_as[, dass21_as_mean_items])))))
 all(dass21_as_mean_range >= 0 & dass21_as_mean_range <= 3)
+
+# ---------------------------------------------------------------------------- #
+# Reverse-code anxiety identity ----
+# ---------------------------------------------------------------------------- #
+
+dat3$anxiety_identity$anxiety_identity_rev <-
+  abs(dat3$anxiety_identity$anxiety_identity - 4)
 
 # ---------------------------------------------------------------------------- #
 # Compute average item scores ----
@@ -229,10 +223,12 @@ sum(is.nan(dat3$dass21_as$dass21_as_m)) == 0
 # Collapse "Eligibility" and "preTest" into "baseline" ----
 # ---------------------------------------------------------------------------- #
 
-target_dfs <- c("oa", "dass21_as")
+# Do this for longitudinal tables (except "task_log")
+
+target_longit_dfs <- c("anxiety_identity", "oa", "mechanisms", "dass21_as")
 
 for (i in 1:length(dat3)) {
-  if (names(dat3)[i] %in% target_dfs) {
+  if (names(dat3)[i] %in% target_longit_dfs) {
     dat3[[i]][, "session_only_col"] <- dat3[[i]][, "session_only"]
     dat3[[i]][, "session_only_col"][dat3[[i]][, "session_only_col"] %in% 
                                       c("Eligibility", "preTest")] <- "baseline"
@@ -240,17 +236,7 @@ for (i in 1:length(dat3)) {
 }
 
 # ---------------------------------------------------------------------------- #
-# Restrict to baseline ----
-# ---------------------------------------------------------------------------- #
-
-# TODO
-
-
-
-
-
-# ---------------------------------------------------------------------------- #
-# Compute rates of item-level missingness for ITT participants ----
+# Compute rates of item-level missingness at baseline for ITT participants ----
 # ---------------------------------------------------------------------------- #
 
 # Restrict to ITT participants
@@ -327,14 +313,20 @@ compute_all_item_missingness_bl(dat3_itt$dass21_as, "dass21_as_m", c(dass21_as_i
 sink()
 
 # ---------------------------------------------------------------------------- #
-# Create analysis data frame ----
+# Restrict to baseline ----
 # ---------------------------------------------------------------------------- #
 
-# TODO (after restricting to baseline above)
+# Do this for longitudinal tables above (except "task_log")
 
+for (i in 1:length(dat3)) {
+  if (names(dat3)[i] %in% target_longit_dfs) {
+    dat3[[i]] <- dat3[[i]][dat3[[i]][, "session_only_col"] == "baseline", ]
+  }
+}
 
-
-
+# ---------------------------------------------------------------------------- #
+# Create analysis data frame ----
+# ---------------------------------------------------------------------------- #
 
 # Create template data frame
 
@@ -357,57 +349,28 @@ anlys_df <- merge(anlys_df,
                   dat3$mental_health_history[, c(index_var, "anxiety_duration")],
                   by = index_var, all.x = TRUE)
 
-# TODO: Restrict to ITT sample
+# Restrict to ITT sample
 
-
-
-
+anlys_df <- anlys_df[anlys_df$itt_anlys == 1, ]
 
 # Sort table
 
 anlys_df <- anlys_df[order(anlys_df$participant_id), ]
 
-# Save data for later use in computing raw means and standard deviations
-
-save(anlys_df, file = "./data/intermediate_clean_further/anlys_df.RData")
-
 # ---------------------------------------------------------------------------- #
-# Grand-mean-center continuous predictors ----
+# Standardize continuous predictors ----
 # ---------------------------------------------------------------------------- #
 
-# TODO
+# Standardize anxiety symptom severity
 
-
-
-
-
-# Note: This code section is no longer used because the variables are now centered
-# in the analysis model script itself based only on participants in the groups that
-# are actually compared in the model
-
-# Define function to grand-mean-center continuous predictors (covariates "age" and 
-# "income_dollar" and auxiliary variables "confident_online" and "important")
-
-# grand_mean_center <- function(df) {
-#   df$income_dollar_ctr <- df$income_dollar - mean(df$income_dollar, na.rm = TRUE)
-#   
-#   return(df)
-# }
-
-# Run function on each analysis dataset
-
-# wd_c1_corr_itt            <- lapply(wd_c1_corr_itt, grand_mean_center)
+anlys_df$oa_sx_sev_m_std <-
+  (anlys_df$oa_sx_sev_m - mean(anlys_df$oa_sx_sev_m, na.rm = TRUE)) / 
+  sd(anlys_df$oa_sx_sev_m, na.rm = TRUE)
 
 # ---------------------------------------------------------------------------- #
 # Export data ----
 # ---------------------------------------------------------------------------- #
 
-# TODO
-
-
-
-
-
 dir.create("./data/final_clean")
 
-save(wd_c1_corr_itt,                 file = "./data/final_clean/wd_c1_corr_itt.RData")
+save(anlys_df, file = "./data/final_clean/anlys_df.RData")
