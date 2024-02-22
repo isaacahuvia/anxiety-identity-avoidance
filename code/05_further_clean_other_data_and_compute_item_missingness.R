@@ -337,7 +337,7 @@ anlys_df <- dat3$participant[, c("participant_id", "exclude_analysis", "itt_anly
 index_var <- "participant_id"
 
 anlys_df <- merge(anlys_df,
-                  dat3$anxiety_identity[, c(index_var, "anxiety_identity")],
+                  dat3$anxiety_identity[, c(index_var, "anxiety_identity_rev")],
                   by = index_var, all.x = TRUE)
 anlys_df <- merge(anlys_df,
                   dat3$oa[, c(index_var, c("axf", "axs", "avo", "oa_sx_sev_m"))],
