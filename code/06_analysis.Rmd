@@ -16,17 +16,21 @@ df <- anlys_df %>%
   select(
     anxiety_identity = anxiety_identity_rev,
     symptom_severity = oa_sx_sev_m_std,
-    behavioral_avoidance = avo,
+    situational_avoidance = avo,
     experiential_avoidance = comp_act_willing,
     anxiety_duration
   ) %>%
   mutate(
+    # Recode anxiety identity to start at 1, per pre-registration
+    anxiety_identity = anxiety_identity + 1,
+    # Recode situational avoidance to start at 1, per pre-registration
+    situational_avoidance = situational_avoidance + 1,
     # Reverse-code experiential avoidance such that higher values = more avoidance
-    experiential_avoidance = 7 - experiential_avoidance,
+    experiential_avoidance = 8 - experiential_avoidance,
     # Create symptom severity groups for plotting
     symptom_severity_group = cut(symptom_severity, c(-9, -1, 1, 9)),
     # Create ordered factor versions of DVs for regressions
-    behavioral_avoidance_fct = factor(behavioral_avoidance, ordered = T),
+    situational_avoidance_fct = factor(situational_avoidance, ordered = T),
     experiential_avoidance_fct = factor(experiential_avoidance, ordered = T)
   )
 ```
@@ -36,7 +40,7 @@ df <- anlys_df %>%
 ```{r}
 numeric_variables <- c(
   "anxiety_identity", 
-  "behavioral_avoidance",
+  "situational_avoidance",
   "experiential_avoidance",
   "symptom_severity",
   "anxiety_duration"
@@ -48,7 +52,7 @@ for(x in numeric_variables) hist(df[[x]])
 # Correlations
 correlations <- df %>%
   select(all_of(numeric_variables)) %>%
-  corr.test(use = "pairwise.complete.obs")
+  corr.test(method = "spearman", use = "pairwise.complete.obs")
 
 round(correlations$r, 2)
 round(correlations$p, 3)
@@ -56,33 +60,33 @@ round(correlations$p, 3)
 
 ## Regressions
 
-### Behavioral Avoidance
+### Situational Avoidance
 
 ```{r}
 model_ba <- brm(
   data = df, 
-  formula = behavioral_avoidance_fct ~ mo(anxiety_identity), 
+  formula = situational_avoidance_fct ~ mo(anxiety_identity), 
   family = cumulative("probit")
 )
 summary(model_ba)
 
 model_ba_control <- brm(
   data = df, 
-  formula = behavioral_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
+  formula = situational_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
   family = cumulative("probit")
 )
 summary(model_ba_control)
 
 model_ba_severity_mod <- brm(
   data = df, 
-  formula = behavioral_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
+  formula = situational_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
   family = cumulative("probit")
 )
 summary(model_ba_severity_mod)
 
 model_ba_duration_mod <- brm(
   data = df, 
-  formula = behavioral_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
+  formula = situational_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
   family = cumulative("probit")
 )
 summary(model_ba_duration_mod)
@@ -124,20 +128,20 @@ Figures.
 
 ```{r}
 df %>%
-  pivot_longer(c(behavioral_avoidance, experiential_avoidance)) %>%
+  pivot_longer(c(situational_avoidance, experiential_avoidance)) %>%
   mutate(
     # Rename variables
-    name = recode(
+    name = recode_factor(
       name,
-      "behavioral_avoidance" = "Behavioral Avoidance",
+      "situational_avoidance" = "Situational Avoidance",
       "experiential_avoidance" = "Experiential Avoidance"
     ),
     # Remove points where no SE can be calculated
     value = case_when(
-      name == "Behavioral Avoidance" & anxiety_identity == 0 & value == 0 ~ NA,
-      name == "Behavioral Avoidance" & anxiety_identity == 1 & value == 4 ~ NA,
-      name == "Experiential Avoidance" & anxiety_identity == 0 & value == 0 ~ NA,
-      name == "Experiential Avoidance" & anxiety_identity == 1 & value == 6 ~ NA,
+      name == "Situational Avoidance" & anxiety_identity == 1 & value == 1 ~ NA,
+      name == "Situational Avoidance" & anxiety_identity == 2 & value == 5 ~ NA,
+      name == "Experiential Avoidance" & anxiety_identity == 1 & value == 1 ~ NA,
+      name == "Experiential Avoidance" & anxiety_identity == 2 & value == 7 ~ NA,
       T ~ value
     )
   ) %>%
@@ -151,12 +155,13 @@ df %>%
     labels = c("Low (1 S.D. or More Below Mean)", "Medium (Within 1 S.D. of Mean)", "High (1 S.D. or More Above Mean)"),
     guide = guide_legend(reverse = T)
   ) +
-  ggh4x::facetted_pos_scales(y = list(name == "Behavioral Avoidance" ~ scale_y_continuous(name = "Avoidance", limits = c(0, 4)),
-                                      name == "Experiential Avoidance" ~ scale_y_continuous(name = "Avoidance", limits = c(0, 6)))) +
+  ggh4x::facetted_pos_scales(y = list(name == "Situational Avoidance" ~ scale_y_continuous(name = "Avoidance", limits = c(1, 5)),
+                                      name == "Experiential Avoidance" ~ scale_y_continuous(name = "Avoidance", limits = c(1, 7), breaks = 1:7))) +
   theme_classic()
 
 ggsave(filename = here("figures", "Avoidance by Identity.png"),
        width = 8,
        height = 4,
-       units = "in")
+       units = "in",
+       dpi = 1200)
 ```
