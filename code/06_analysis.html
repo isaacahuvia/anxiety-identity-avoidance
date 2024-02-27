@@ -458,8 +458,8 @@ round(correlations$r, 2)</code></pre>
 <pre><code>## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 1).
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.000932 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 9.32 seconds.
+## Chain 1: Gradient evaluation took 0.00153 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 15.3 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -476,15 +476,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 38.516 seconds (Warm-up)
-## Chain 1:                45.813 seconds (Sampling)
-## Chain 1:                84.329 seconds (Total)
+## Chain 1:  Elapsed Time: 37.867 seconds (Warm-up)
+## Chain 1:                49.021 seconds (Sampling)
+## Chain 1:                86.888 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.000922 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 9.22 seconds.
+## Chain 2: Gradient evaluation took 0.001007 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 10.07 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -501,15 +501,18 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 37.201 seconds (Warm-up)
-## Chain 2:                32.084 seconds (Sampling)
-## Chain 2:                69.285 seconds (Total)
+## Chain 2:  Elapsed Time: 37.036 seconds (Warm-up)
+## Chain 2:                39.222 seconds (Sampling)
+## Chain 2:                76.258 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.000975 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 9.75 seconds.
+## Chain 3: Gradient evaluation took 0.000848 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 8.48 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -526,27 +529,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 43.071 seconds (Warm-up)
-## Chain 3:                37.63 seconds (Sampling)
-## Chain 3:                80.701 seconds (Total)
+## Chain 3:  Elapsed Time: 39.715 seconds (Warm-up)
+## Chain 3:                37.62 seconds (Sampling)
+## Chain 3:                77.335 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.0009 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 9 seconds.
+## Chain 4: Gradient evaluation took 0.000908 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 9.08 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -563,9 +554,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 42.45 seconds (Warm-up)
-## Chain 4:                36.285 seconds (Sampling)
-## Chain 4:                78.735 seconds (Total)
+## Chain 4:  Elapsed Time: 36.947 seconds (Warm-up)
+## Chain 4:                42.584 seconds (Sampling)
+## Chain 4:                79.531 seconds (Total)
 ## Chain 4:</code></pre>
 <pre class="r"><code>summary(model_ba)</code></pre>
 <pre><code>##  Family: cumulative 
@@ -577,23 +568,23 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                    Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-## Intercept[1]          -0.59      0.24    -0.99    -0.09 1.00     1156     2004
-## Intercept[2]           0.28      0.24    -0.12     0.79 1.00     1279     2287
-## Intercept[3]           1.45      0.24     1.06     1.98 1.00     1274     2154
-## Intercept[4]           2.77      0.25     2.36     3.30 1.00     1193     2047
-## moanxiety_identity     0.51      0.07     0.39     0.64 1.00     1262     1887
+## Intercept[1]          -0.58      0.24    -1.00    -0.07 1.00     1495     2477
+## Intercept[2]           0.30      0.24    -0.12     0.80 1.00     1533     2445
+## Intercept[3]           1.47      0.24     1.05     1.97 1.00     1541     2327
+## Intercept[4]           2.79      0.25     2.35     3.31 1.00     1536     2434
+## moanxiety_identity     0.51      0.06     0.40     0.65 1.00     1570     2179
 ## 
 ## Simplex Parameters: 
 ##                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-## moanxiety_identity1[1]     0.19      0.10     0.02     0.39 1.00     1295
-## moanxiety_identity1[2]     0.26      0.06     0.16     0.38 1.00     2138
-## moanxiety_identity1[3]     0.31      0.05     0.21     0.42 1.00     1840
-## moanxiety_identity1[4]     0.24      0.05     0.14     0.34 1.00     2756
+## moanxiety_identity1[1]     0.20      0.10     0.03     0.39 1.00     1538
+## moanxiety_identity1[2]     0.26      0.06     0.15     0.37 1.00     2238
+## moanxiety_identity1[3]     0.30      0.05     0.21     0.42 1.00     1939
+## moanxiety_identity1[4]     0.23      0.05     0.14     0.33 1.00     2163
 ##                        Tail_ESS
-## moanxiety_identity1[1]     1334
-## moanxiety_identity1[2]     2513
-## moanxiety_identity1[3]     2189
-## moanxiety_identity1[4]     2253
+## moanxiety_identity1[1]     1497
+## moanxiety_identity1[2]     2206
+## moanxiety_identity1[3]     2520
+## moanxiety_identity1[4]     2167
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
@@ -615,9 +606,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Rejecting initial value:
 ## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.001035 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 10.35 seconds.
+## Chain 1: Gradient evaluation took 0.001041 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 10.41 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -634,18 +631,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 42.295 seconds (Warm-up)
-## Chain 1:                39.68 seconds (Sampling)
-## Chain 1:                81.975 seconds (Total)
+## Chain 1:  Elapsed Time: 42.912 seconds (Warm-up)
+## Chain 1:                49.591 seconds (Sampling)
+## Chain 1:                92.503 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.000937 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 9.37 seconds.
+## Chain 2: Gradient evaluation took 0.000983 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 9.83 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -662,18 +656,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 42.102 seconds (Warm-up)
-## Chain 2:                40.166 seconds (Sampling)
-## Chain 2:                82.268 seconds (Total)
+## Chain 2:  Elapsed Time: 49.125 seconds (Warm-up)
+## Chain 2:                44.438 seconds (Sampling)
+## Chain 2:                93.563 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
-## Chain 3: Rejecting initial value:
-## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.000943 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 9.43 seconds.
+## Chain 3: Gradient evaluation took 0.001317 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 13.17 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -690,21 +681,18 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 45.052 seconds (Warm-up)
-## Chain 3:                39.086 seconds (Sampling)
-## Chain 3:                84.138 seconds (Total)
+## Chain 3:  Elapsed Time: 40.264 seconds (Warm-up)
+## Chain 3:                46.135 seconds (Sampling)
+## Chain 3:                86.399 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
 ## Chain 4: Rejecting initial value:
 ## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.000903 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 9.03 seconds.
+## Chain 4: Gradient evaluation took 0.001037 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 10.37 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -721,9 +709,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 42.81 seconds (Warm-up)
-## Chain 4:                42.41 seconds (Sampling)
-## Chain 4:                85.22 seconds (Total)
+## Chain 4:  Elapsed Time: 47.443 seconds (Warm-up)
+## Chain 4:                45.706 seconds (Sampling)
+## Chain 4:                93.149 seconds (Total)
 ## Chain 4:</code></pre>
 <pre class="r"><code>summary(model_ba_control)</code></pre>
 <pre><code>##  Family: cumulative 
@@ -735,24 +723,24 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                    Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-## Intercept[1]          -1.01      0.25    -1.42    -0.51 1.00     1680     2014
-## Intercept[2]          -0.10      0.24    -0.51     0.42 1.00     1655     1924
-## Intercept[3]           1.13      0.25     0.73     1.67 1.00     1640     1852
-## Intercept[4]           2.53      0.25     2.11     3.06 1.00     1657     1933
-## symptom_severity       0.41      0.04     0.33     0.48 1.00     2617     2659
-## moanxiety_identity     0.34      0.07     0.22     0.48 1.00     1628     1979
+## Intercept[1]          -1.03      0.24    -1.43    -0.49 1.00     1872     2271
+## Intercept[2]          -0.11      0.24    -0.51     0.43 1.00     1860     2295
+## Intercept[3]           1.12      0.25     0.71     1.67 1.00     1854     2194
+## Intercept[4]           2.52      0.25     2.10     3.06 1.00     1914     2465
+## symptom_severity       0.41      0.04     0.34     0.49 1.00     2792     2716
+## moanxiety_identity     0.34      0.07     0.22     0.48 1.00     1911     2255
 ## 
 ## Simplex Parameters: 
 ##                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-## moanxiety_identity1[1]     0.27      0.13     0.03     0.51 1.00     1750
-## moanxiety_identity1[2]     0.28      0.09     0.12     0.45 1.00     2226
-## moanxiety_identity1[3]     0.27      0.08     0.14     0.44 1.00     2507
-## moanxiety_identity1[4]     0.19      0.07     0.06     0.33 1.00     2611
+## moanxiety_identity1[1]     0.27      0.13     0.02     0.51 1.00     1784
+## moanxiety_identity1[2]     0.27      0.09     0.11     0.45 1.00     2357
+## moanxiety_identity1[3]     0.28      0.08     0.15     0.44 1.00     2567
+## moanxiety_identity1[4]     0.18      0.07     0.04     0.33 1.00     2249
 ##                        Tail_ESS
-## moanxiety_identity1[1]     1889
-## moanxiety_identity1[2]     2099
-## moanxiety_identity1[3]     2238
-## moanxiety_identity1[4]     1698
+## moanxiety_identity1[1]     1308
+## moanxiety_identity1[2]     1811
+## moanxiety_identity1[3]     2202
+## moanxiety_identity1[4]     1269
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
@@ -771,21 +759,9 @@ round(correlations$r, 2)</code></pre>
 ## Start sampling</code></pre>
 <pre><code>## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 1).
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.001585 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 15.85 seconds.
+## Chain 1: Gradient evaluation took 0.001573 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 15.73 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -802,42 +778,18 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 86.775 seconds (Warm-up)
-## Chain 1:                54.092 seconds (Sampling)
-## Chain 1:                140.867 seconds (Total)
+## Chain 1:  Elapsed Time: 98.075 seconds (Warm-up)
+## Chain 1:                57.034 seconds (Sampling)
+## Chain 1:                155.109 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
 ## Chain 2: Rejecting initial value:
 ## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.001192 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 11.92 seconds.
+## Chain 2: Gradient evaluation took 0.001233 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 12.33 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -854,9 +806,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 86.201 seconds (Warm-up)
-## Chain 2:                53.491 seconds (Sampling)
-## Chain 2:                139.692 seconds (Total)
+## Chain 2:  Elapsed Time: 93.244 seconds (Warm-up)
+## Chain 2:                61.518 seconds (Sampling)
+## Chain 2:                154.762 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
@@ -875,9 +827,33 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Rejecting initial value:
 ## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.001164 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 11.64 seconds.
+## Chain 3: Gradient evaluation took 0.001131 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 11.31 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -894,9 +870,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 90.584 seconds (Warm-up)
-## Chain 3:                54.041 seconds (Sampling)
-## Chain 3:                144.625 seconds (Total)
+## Chain 3:  Elapsed Time: 92.025 seconds (Warm-up)
+## Chain 3:                62.889 seconds (Sampling)
+## Chain 3:                154.914 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
@@ -906,12 +882,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Rejecting initial value:
 ## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.001188 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 11.88 seconds.
+## Chain 4: Gradient evaluation took 0.001209 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 12.09 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -928,9 +901,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 78.901 seconds (Warm-up)
-## Chain 4:                56.782 seconds (Sampling)
-## Chain 4:                135.683 seconds (Total)
+## Chain 4:  Elapsed Time: 92.248 seconds (Warm-up)
+## Chain 4:                49.806 seconds (Sampling)
+## Chain 4:                142.054 seconds (Total)
 ## Chain 4:</code></pre>
 <pre class="r"><code>summary(model_ba_severity_mod)</code></pre>
 <pre><code>##  Family: cumulative 
@@ -942,41 +915,41 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                                     Estimate Est.Error l-95% CI u-95% CI Rhat
-## Intercept[1]                           -1.00      0.26    -1.44    -0.44 1.00
-## Intercept[2]                           -0.08      0.26    -0.52     0.47 1.00
-## Intercept[3]                            1.15      0.26     0.70     1.69 1.00
-## Intercept[4]                            2.55      0.27     2.09     3.11 1.00
-## symptom_severity                        0.40      0.11     0.16     0.63 1.00
+## Intercept[1]                           -1.00      0.27    -1.45    -0.43 1.00
+## Intercept[2]                           -0.09      0.27    -0.53     0.49 1.00
+## Intercept[3]                            1.14      0.27     0.70     1.72 1.00
+## Intercept[4]                            2.54      0.27     2.08     3.15 1.00
+## symptom_severity                        0.40      0.12     0.16     0.63 1.00
 ## moanxiety_identity                      0.34      0.07     0.22     0.49 1.00
-## moanxiety_identity:symptom_severity     0.01      0.04    -0.07     0.09 1.00
+## moanxiety_identity:symptom_severity     0.01      0.04    -0.07     0.09 1.01
 ##                                     Bulk_ESS Tail_ESS
-## Intercept[1]                            1238     2187
-## Intercept[2]                            1269     1882
-## Intercept[3]                            1265     1826
-## Intercept[4]                            1324     2107
-## symptom_severity                        1724     1808
-## moanxiety_identity                      1304     1852
-## moanxiety_identity:symptom_severity     1745     2097
+## Intercept[1]                            1816     2052
+## Intercept[2]                            1817     2182
+## Intercept[3]                            1822     2120
+## Intercept[4]                            1840     2137
+## symptom_severity                        1857     1982
+## moanxiety_identity                      1869     2186
+## moanxiety_identity:symptom_severity     1878     2091
 ## 
 ## Simplex Parameters: 
 ##                                         Estimate Est.Error l-95% CI u-95% CI
-## moanxiety_identity1[1]                      0.28      0.13     0.03     0.53
-## moanxiety_identity1[2]                      0.27      0.09     0.10     0.47
-## moanxiety_identity1[3]                      0.27      0.08     0.14     0.44
-## moanxiety_identity1[4]                      0.18      0.08     0.03     0.35
-## moanxiety_identity:symptom_severity1[1]     0.29      0.20     0.01     0.74
-## moanxiety_identity:symptom_severity1[2]     0.24      0.19     0.01     0.69
+## moanxiety_identity1[1]                      0.27      0.14     0.03     0.52
+## moanxiety_identity1[2]                      0.28      0.09     0.11     0.48
+## moanxiety_identity1[3]                      0.27      0.08     0.15     0.44
+## moanxiety_identity1[4]                      0.18      0.08     0.03     0.34
+## moanxiety_identity:symptom_severity1[1]     0.29      0.21     0.01     0.75
+## moanxiety_identity:symptom_severity1[2]     0.25      0.19     0.01     0.70
 ## moanxiety_identity:symptom_severity1[3]     0.22      0.18     0.01     0.65
-## moanxiety_identity:symptom_severity1[4]     0.25      0.19     0.01     0.68
+## moanxiety_identity:symptom_severity1[4]     0.25      0.19     0.01     0.70
 ##                                         Rhat Bulk_ESS Tail_ESS
-## moanxiety_identity1[1]                  1.00     1540     1937
-## moanxiety_identity1[2]                  1.00     2408     1950
-## moanxiety_identity1[3]                  1.00     2079     2321
-## moanxiety_identity1[4]                  1.00     1942     1122
-## moanxiety_identity:symptom_severity1[1] 1.00     3137     2091
-## moanxiety_identity:symptom_severity1[2] 1.00     2896     2036
-## moanxiety_identity:symptom_severity1[3] 1.00     3108     2783
-## moanxiety_identity:symptom_severity1[4] 1.00     3483     2812
+## moanxiety_identity1[1]                  1.00     1908     1866
+## moanxiety_identity1[2]                  1.00     2655     2659
+## moanxiety_identity1[3]                  1.00     2659     2954
+## moanxiety_identity1[4]                  1.00     2221     1224
+## moanxiety_identity:symptom_severity1[1] 1.00     2883     1988
+## moanxiety_identity:symptom_severity1[2] 1.00     3191     2348
+## moanxiety_identity:symptom_severity1[3] 1.00     3478     2639
+## moanxiety_identity:symptom_severity1[4] 1.00     3166     2553
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
@@ -1013,9 +986,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Rejecting initial value:
 ## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.002103 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 21.03 seconds.
+## Chain 1: Gradient evaluation took 0.001902 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 19.02 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -1032,9 +1011,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 213.42 seconds (Warm-up)
-## Chain 1:                104.713 seconds (Sampling)
-## Chain 1:                318.133 seconds (Total)
+## Chain 1:  Elapsed Time: 214.059 seconds (Warm-up)
+## Chain 1:                130.395 seconds (Sampling)
+## Chain 1:                344.454 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
@@ -1056,18 +1035,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Rejecting initial value:
 ## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.001579 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 15.79 seconds.
+## Chain 2: Gradient evaluation took 0.001468 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 14.68 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -1084,9 +1054,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 197.409 seconds (Warm-up)
-## Chain 2:                100.241 seconds (Sampling)
-## Chain 2:                297.65 seconds (Total)
+## Chain 2:  Elapsed Time: 221.924 seconds (Warm-up)
+## Chain 2:                93.274 seconds (Sampling)
+## Chain 2:                315.198 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
@@ -1096,9 +1066,108 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Rejecting initial value:
 ## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.001471 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 14.71 seconds.
+## Chain 3: Gradient evaluation took 0.002517 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 25.17 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -1115,9 +1184,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 38.811 seconds (Warm-up)
-## Chain 3:                964.438 seconds (Sampling)
-## Chain 3:                1003.25 seconds (Total)
+## Chain 3:  Elapsed Time: 213.068 seconds (Warm-up)
+## Chain 3:                108.523 seconds (Sampling)
+## Chain 3:                321.591 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
@@ -1136,15 +1205,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Rejecting initial value:
 ## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.001718 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 17.18 seconds.
+## Chain 4: Gradient evaluation took 0.001472 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 14.72 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -1161,34 +1224,11 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 17.718 seconds (Warm-up)
-## Chain 4:                17.32 seconds (Sampling)
-## Chain 4:                35.038 seconds (Total)
+## Chain 4:  Elapsed Time: 222.084 seconds (Warm-up)
+## Chain 4:                123.079 seconds (Sampling)
+## Chain 4:                345.163 seconds (Total)
 ## Chain 4:</code></pre>
-<pre><code>## Warning: There were 1341 divergent transitions after warmup. See
-## https://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
-## to find out why this is a problem and how to eliminate them.</code></pre>
-<pre><code>## Warning: There were 638 transitions after warmup that exceeded the maximum treedepth. Increase max_treedepth above 10. See
-## https://mc-stan.org/misc/warnings.html#maximum-treedepth-exceeded</code></pre>
-<pre><code>## Warning: There were 2 chains where the estimated Bayesian Fraction of Missing Information was low. See
-## https://mc-stan.org/misc/warnings.html#bfmi-low</code></pre>
-<pre><code>## Warning: Examine the pairs() plot to diagnose sampling problems</code></pre>
-<pre><code>## Warning: The largest R-hat is NA, indicating chains have not mixed.
-## Running the chains for more iterations may help. See
-## https://mc-stan.org/misc/warnings.html#r-hat</code></pre>
-<pre><code>## Warning: Bulk Effective Samples Size (ESS) is too low, indicating posterior means and medians may be unreliable.
-## Running the chains for more iterations may help. See
-## https://mc-stan.org/misc/warnings.html#bulk-ess</code></pre>
-<pre><code>## Warning: Tail Effective Samples Size (ESS) is too low, indicating posterior variances and tail quantiles may be unreliable.
-## Running the chains for more iterations may help. See
-## https://mc-stan.org/misc/warnings.html#tail-ess</code></pre>
 <pre class="r"><code>summary(model_ba_duration_mod)</code></pre>
-<pre><code>## Warning: Parts of the model have not converged (some Rhats are &gt; 1.05). Be
-## careful when analysing the results! We recommend running more iterations and/or
-## setting stronger priors.</code></pre>
-<pre><code>## Warning: There were 1341 divergent transitions after warmup. Increasing
-## adapt_delta above 0.8 may help. See
-## http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup</code></pre>
 <pre><code>##  Family: cumulative 
 ##   Links: mu = probit; disc = identity 
 ## Formula: situational_avoidance_fct ~ mo(anxiety_identity) * mo(anxiety_duration) + symptom_severity 
@@ -1198,75 +1238,75 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                                       Estimate Est.Error l-95% CI u-95% CI Rhat
-## Intercept[1]                             -0.21      1.05    -1.70     1.03 2.21
-## Intercept[2]                              0.44      0.77    -0.77     1.37 1.97
-## Intercept[3]                              1.50      0.64     0.46     2.57 2.10
-## Intercept[4]                              4.08      2.74     1.73     8.71 2.11
-## symptom_severity                          0.18      0.54    -1.53     0.47 1.82
-## moanxiety_identity                        0.06      0.73    -1.01     1.55 2.82
-## moanxiety_duration                       -0.07      0.57    -0.77     1.43 2.40
-## moanxiety_identity:moanxiety_duration     0.12      0.36    -0.65     0.66 2.65
+## Intercept[1]                             -1.23      0.31    -1.79    -0.55 1.00
+## Intercept[2]                             -0.29      0.31    -0.84     0.38 1.00
+## Intercept[3]                              0.94      0.31     0.38     1.63 1.00
+## Intercept[4]                              2.34      0.31     1.76     3.02 1.00
+## symptom_severity                          0.40      0.04     0.32     0.47 1.00
+## moanxiety_identity                        0.17      0.10    -0.02     0.39 1.00
+## moanxiety_duration                       -0.03      0.04    -0.13     0.04 1.00
+## moanxiety_identity:moanxiety_duration     0.03      0.01    -0.00     0.05 1.00
 ##                                       Bulk_ESS Tail_ESS
-## Intercept[1]                                 5       20
-## Intercept[2]                                 6       12
-## Intercept[3]                                 5       14
-## Intercept[4]                                 5       11
-## symptom_severity                             6       11
-## moanxiety_identity                           5       11
-## moanxiety_duration                           5       11
-## moanxiety_identity:moanxiety_duration        5       11
+## Intercept[1]                              1058     1795
+## Intercept[2]                              1076     1788
+## Intercept[3]                              1075     1972
+## Intercept[4]                              1121     1923
+## symptom_severity                          4242     3074
+## moanxiety_identity                        1086     1684
+## moanxiety_duration                         995     1604
+## moanxiety_identity:moanxiety_duration     1016     1626
 ## 
 ## Simplex Parameters: 
 ##                                           Estimate Est.Error l-95% CI u-95% CI
-## moanxiety_identity1[1]                        0.32      0.24     0.03     0.66
-## moanxiety_identity1[2]                        0.29      0.12     0.03     0.54
-## moanxiety_identity1[3]                        0.19      0.14     0.04     0.55
-## moanxiety_identity1[4]                        0.21      0.17     0.02     0.47
-## moanxiety_duration1[1]                        0.14      0.12     0.01     0.36
-## moanxiety_duration1[2]                        0.12      0.10     0.01     0.36
-## moanxiety_duration1[3]                        0.10      0.08     0.01     0.35
-## moanxiety_duration1[4]                        0.20      0.21     0.01     0.53
-## moanxiety_duration1[5]                        0.16      0.09     0.01     0.31
-## moanxiety_duration1[6]                        0.11      0.09     0.01     0.32
-## moanxiety_duration1[7]                        0.11      0.09     0.01     0.36
-## moanxiety_duration1[8]                        0.07      0.08     0.01     0.30
-## moanxiety_identity:moanxiety_duration1[1]     0.45      0.24     0.02     0.71
-## moanxiety_identity:moanxiety_duration1[2]     0.24      0.14     0.05     0.59
-## moanxiety_identity:moanxiety_duration1[3]     0.17      0.15     0.04     0.53
-## moanxiety_identity:moanxiety_duration1[4]     0.14      0.10     0.02     0.41
-## moanxiety_identity:moanxiety_duration2[1]     0.16      0.12     0.01     0.36
-## moanxiety_identity:moanxiety_duration2[2]     0.17      0.17     0.01     0.51
-## moanxiety_identity:moanxiety_duration2[3]     0.09      0.09     0.01     0.34
-## moanxiety_identity:moanxiety_duration2[4]     0.09      0.10     0.01     0.39
-## moanxiety_identity:moanxiety_duration2[5]     0.19      0.13     0.02     0.44
-## moanxiety_identity:moanxiety_duration2[6]     0.11      0.08     0.01     0.27
-## moanxiety_identity:moanxiety_duration2[7]     0.06      0.05     0.00     0.20
-## moanxiety_identity:moanxiety_duration2[8]     0.12      0.11     0.01     0.33
+## moanxiety_identity1[1]                        0.28      0.18     0.01     0.66
+## moanxiety_identity1[2]                        0.24      0.15     0.01     0.58
+## moanxiety_identity1[3]                        0.28      0.16     0.02     0.64
+## moanxiety_identity1[4]                        0.20      0.14     0.01     0.54
+## moanxiety_duration1[1]                        0.14      0.12     0.00     0.43
+## moanxiety_duration1[2]                        0.13      0.11     0.00     0.43
+## moanxiety_duration1[3]                        0.13      0.11     0.00     0.41
+## moanxiety_duration1[4]                        0.12      0.10     0.00     0.39
+## moanxiety_duration1[5]                        0.11      0.10     0.00     0.37
+## moanxiety_duration1[6]                        0.12      0.10     0.00     0.39
+## moanxiety_duration1[7]                        0.14      0.11     0.00     0.42
+## moanxiety_duration1[8]                        0.11      0.09     0.00     0.35
+## moanxiety_identity:moanxiety_duration1[1]     0.26      0.17     0.01     0.64
+## moanxiety_identity:moanxiety_duration1[2]     0.31      0.17     0.03     0.67
+## moanxiety_identity:moanxiety_duration1[3]     0.26      0.15     0.02     0.60
+## moanxiety_identity:moanxiety_duration1[4]     0.16      0.13     0.01     0.48
+## moanxiety_identity:moanxiety_duration2[1]     0.13      0.11     0.00     0.43
+## moanxiety_identity:moanxiety_duration2[2]     0.13      0.10     0.00     0.39
+## moanxiety_identity:moanxiety_duration2[3]     0.13      0.10     0.00     0.39
+## moanxiety_identity:moanxiety_duration2[4]     0.15      0.12     0.01     0.44
+## moanxiety_identity:moanxiety_duration2[5]     0.18      0.13     0.01     0.47
+## moanxiety_identity:moanxiety_duration2[6]     0.10      0.09     0.00     0.33
+## moanxiety_identity:moanxiety_duration2[7]     0.07      0.07     0.00     0.25
+## moanxiety_identity:moanxiety_duration2[8]     0.11      0.08     0.00     0.30
 ##                                           Rhat Bulk_ESS Tail_ESS
-## moanxiety_identity1[1]                    1.60        7       28
-## moanxiety_identity1[2]                    1.35       18      131
-## moanxiety_identity1[3]                    1.71       10      174
-## moanxiety_identity1[4]                    1.71        6       62
-## moanxiety_duration1[1]                    1.37        9      134
-## moanxiety_duration1[2]                    1.20       14      109
-## moanxiety_duration1[3]                    1.76       32      229
-## moanxiety_duration1[4]                    1.85        6       12
-## moanxiety_duration1[5]                    1.89       11      157
-## moanxiety_duration1[6]                    1.22       13      170
-## moanxiety_duration1[7]                    1.67       27      135
-## moanxiety_duration1[8]                    1.34       11      125
-## moanxiety_identity:moanxiety_duration1[1] 1.79        6       21
-## moanxiety_identity:moanxiety_duration1[2] 1.63       18      144
-## moanxiety_identity:moanxiety_duration1[3] 1.99        8      151
-## moanxiety_identity:moanxiety_duration1[4] 1.66       28      176
-## moanxiety_identity:moanxiety_duration2[1] 1.38       11      113
-## moanxiety_identity:moanxiety_duration2[2] 1.54        7       31
-## moanxiety_identity:moanxiety_duration2[3] 1.36       10      135
-## moanxiety_identity:moanxiety_duration2[4] 1.72        9      124
-## moanxiety_identity:moanxiety_duration2[5] 1.28       11      174
-## moanxiety_identity:moanxiety_duration2[6] 1.26       12      129
-## moanxiety_identity:moanxiety_duration2[7] 1.84       95      133
-## moanxiety_identity:moanxiety_duration2[8] 1.65        6       16
+## moanxiety_identity1[1]                    1.00     2799     2248
+## moanxiety_identity1[2]                    1.00     2520     2155
+## moanxiety_identity1[3]                    1.00     2723     2251
+## moanxiety_identity1[4]                    1.00     2940     2481
+## moanxiety_duration1[1]                    1.00     4244     1504
+## moanxiety_duration1[2]                    1.00     3969     2377
+## moanxiety_duration1[3]                    1.00     3755     2207
+## moanxiety_duration1[4]                    1.00     3368     2318
+## moanxiety_duration1[5]                    1.00     3447     1876
+## moanxiety_duration1[6]                    1.00     3441     2146
+## moanxiety_duration1[7]                    1.00     3639     2851
+## moanxiety_duration1[8]                    1.00     4242     2619
+## moanxiety_identity:moanxiety_duration1[1] 1.00     2541     2050
+## moanxiety_identity:moanxiety_duration1[2] 1.00     2224     1971
+## moanxiety_identity:moanxiety_duration1[3] 1.00     2248     2269
+## moanxiety_identity:moanxiety_duration1[4] 1.00     2358     2104
+## moanxiety_identity:moanxiety_duration2[1] 1.00     3297     1761
+## moanxiety_identity:moanxiety_duration2[2] 1.00     3513     1864
+## moanxiety_identity:moanxiety_duration2[3] 1.00     3587     1929
+## moanxiety_identity:moanxiety_duration2[4] 1.00     3152     1782
+## moanxiety_identity:moanxiety_duration2[5] 1.00     2801     2106
+## moanxiety_identity:moanxiety_duration2[6] 1.00     3418     1812
+## moanxiety_identity:moanxiety_duration2[7] 1.00     4380     2732
+## moanxiety_identity:moanxiety_duration2[8] 1.00     3712     2883
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
@@ -1288,30 +1328,9 @@ round(correlations$r, 2)</code></pre>
 <pre><code>## Start sampling</code></pre>
 <pre><code>## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 1).
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.000962 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 9.62 seconds.
+## Chain 1: Gradient evaluation took 0.001064 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 10.64 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -1328,21 +1347,18 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 46.48 seconds (Warm-up)
-## Chain 1:                30.448 seconds (Sampling)
-## Chain 1:                76.928 seconds (Total)
+## Chain 1:  Elapsed Time: 43.17 seconds (Warm-up)
+## Chain 1:                35.46 seconds (Sampling)
+## Chain 1:                78.63 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
 ## Chain 2: Rejecting initial value:
 ## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.000894 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 8.94 seconds.
+## Chain 2: Gradient evaluation took 0.000927 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 9.27 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -1359,15 +1375,24 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 45.061 seconds (Warm-up)
-## Chain 2:                35.713 seconds (Sampling)
-## Chain 2:                80.774 seconds (Total)
+## Chain 2:  Elapsed Time: 46.524 seconds (Warm-up)
+## Chain 2:                32.755 seconds (Sampling)
+## Chain 2:                79.279 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.000881 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 8.81 seconds.
+## Chain 3: Gradient evaluation took 0.000876 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 8.76 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -1384,15 +1409,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 45.86 seconds (Warm-up)
-## Chain 3:                45.043 seconds (Sampling)
-## Chain 3:                90.903 seconds (Total)
+## Chain 3:  Elapsed Time: 45.789 seconds (Warm-up)
+## Chain 3:                31.308 seconds (Sampling)
+## Chain 3:                77.097 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.000927 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 9.27 seconds.
+## Chain 4: Gradient evaluation took 0.000922 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 9.22 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -1409,9 +1434,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 45.349 seconds (Warm-up)
-## Chain 4:                34.28 seconds (Sampling)
-## Chain 4:                79.629 seconds (Total)
+## Chain 4:  Elapsed Time: 44.372 seconds (Warm-up)
+## Chain 4:                35.801 seconds (Sampling)
+## Chain 4:                80.173 seconds (Total)
 ## Chain 4:</code></pre>
 <pre class="r"><code>summary(model_ea)</code></pre>
 <pre><code>##  Family: cumulative 
@@ -1423,25 +1448,25 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                    Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-## Intercept[1]          -1.15      0.24    -1.52    -0.61 1.00     1324     1742
-## Intercept[2]          -0.41      0.24    -0.77     0.12 1.00     1336     1630
-## Intercept[3]           0.25      0.24    -0.11     0.79 1.00     1364     1760
-## Intercept[4]           0.57      0.24     0.21     1.11 1.00     1337     1762
-## Intercept[5]           1.24      0.24     0.88     1.79 1.00     1338     1686
-## Intercept[6]           2.04      0.24     1.67     2.59 1.00     1355     1775
-## moanxiety_identity     0.18      0.06     0.08     0.33 1.00     1380     1599
+## Intercept[1]          -1.16      0.23    -1.52    -0.66 1.00     1307     1991
+## Intercept[2]          -0.43      0.22    -0.78     0.07 1.00     1334     2088
+## Intercept[3]           0.23      0.22    -0.12     0.73 1.00     1316     1940
+## Intercept[4]           0.55      0.22     0.21     1.06 1.00     1321     1971
+## Intercept[5]           1.23      0.23     0.87     1.73 1.00     1341     1961
+## Intercept[6]           2.02      0.23     1.66     2.54 1.00     1388     2000
+## moanxiety_identity     0.18      0.06     0.08     0.31 1.00     1405     1855
 ## 
 ## Simplex Parameters: 
 ##                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-## moanxiety_identity1[1]     0.40      0.19     0.05     0.73 1.00     1572
-## moanxiety_identity1[2]     0.15      0.11     0.01     0.42 1.00     2370
-## moanxiety_identity1[3]     0.21      0.12     0.03     0.52 1.00     2330
-## moanxiety_identity1[4]     0.23      0.13     0.02     0.51 1.00     2326
+## moanxiety_identity1[1]     0.39      0.19     0.03     0.71 1.00     1421
+## moanxiety_identity1[2]     0.16      0.11     0.01     0.42 1.00     2303
+## moanxiety_identity1[3]     0.21      0.13     0.03     0.52 1.00     2227
+## moanxiety_identity1[4]     0.24      0.13     0.02     0.53 1.00     2430
 ##                        Tail_ESS
-## moanxiety_identity1[1]     2216
-## moanxiety_identity1[2]     1609
-## moanxiety_identity1[3]     1909
-## moanxiety_identity1[4]     1599
+## moanxiety_identity1[1]     1652
+## moanxiety_identity1[2]     1675
+## moanxiety_identity1[3]     1943
+## moanxiety_identity1[4]     1780
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
@@ -1469,9 +1494,42 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Rejecting initial value:
 ## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.001023 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 10.23 seconds.
+## Chain 1: Gradient evaluation took 0.001121 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 11.21 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -1488,36 +1546,18 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 45.562 seconds (Warm-up)
-## Chain 1:                31.663 seconds (Sampling)
-## Chain 1:                77.225 seconds (Total)
+## Chain 1:  Elapsed Time: 41.465 seconds (Warm-up)
+## Chain 1:                35.485 seconds (Sampling)
+## Chain 1:                76.95 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
 ## Chain 2: Rejecting initial value:
 ## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.000899 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 8.99 seconds.
+## Chain 2: Gradient evaluation took 0.000925 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 9.25 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -1534,9 +1574,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 48.819 seconds (Warm-up)
-## Chain 2:                33.585 seconds (Sampling)
-## Chain 2:                82.404 seconds (Total)
+## Chain 2:  Elapsed Time: 44.94 seconds (Warm-up)
+## Chain 2:                31.067 seconds (Sampling)
+## Chain 2:                76.007 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
@@ -1549,21 +1589,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Rejecting initial value:
 ## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 3:   Stan can&#39;t start sampling from this initial value.
-## Chain 3: Rejecting initial value:
-## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 3:   Stan can&#39;t start sampling from this initial value.
-## Chain 3: Rejecting initial value:
-## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 3:   Stan can&#39;t start sampling from this initial value.
-## Chain 3: Rejecting initial value:
-## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 3:   Stan can&#39;t start sampling from this initial value.
-## Chain 3: Rejecting initial value:
-## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.000961 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 9.61 seconds.
+## Chain 3: Gradient evaluation took 0.000999 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 9.99 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -1580,15 +1608,45 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 49.717 seconds (Warm-up)
-## Chain 3:                33.173 seconds (Sampling)
-## Chain 3:                82.89 seconds (Total)
+## Chain 3:  Elapsed Time: 47.822 seconds (Warm-up)
+## Chain 3:                42.344 seconds (Sampling)
+## Chain 3:                90.166 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.000958 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 9.58 seconds.
+## Chain 4: Gradient evaluation took 0.000864 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 8.64 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -1605,9 +1663,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 58.391 seconds (Warm-up)
-## Chain 4:                40.8 seconds (Sampling)
-## Chain 4:                99.191 seconds (Total)
+## Chain 4:  Elapsed Time: 55.764 seconds (Warm-up)
+## Chain 4:                32.727 seconds (Sampling)
+## Chain 4:                88.491 seconds (Total)
 ## Chain 4:</code></pre>
 <pre class="r"><code>summary(model_ea_control)</code></pre>
 <pre><code>##  Family: cumulative 
@@ -1619,26 +1677,26 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                    Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-## Intercept[1]          -1.28      0.22    -1.63    -0.77 1.00     1277     2017
-## Intercept[2]          -0.54      0.22    -0.87    -0.05 1.01     1297     1978
-## Intercept[3]           0.11      0.22    -0.21     0.61 1.01     1305     2038
-## Intercept[4]           0.44      0.22     0.11     0.94 1.01     1283     2035
-## Intercept[5]           1.11      0.22     0.78     1.62 1.00     1316     1994
-## Intercept[6]           1.91      0.23     1.58     2.43 1.00     1379     2141
-## symptom_severity       0.08      0.04     0.01     0.15 1.00     3748     3132
-## moanxiety_identity     0.13      0.06     0.03     0.26 1.00     1298     2027
+## Intercept[1]          -1.27      0.23    -1.62    -0.74 1.00     1304     1546
+## Intercept[2]          -0.54      0.23    -0.87    -0.01 1.00     1368     1626
+## Intercept[3]           0.12      0.23    -0.21     0.64 1.00     1317     1858
+## Intercept[4]           0.44      0.23     0.11     0.96 1.00     1328     1975
+## Intercept[5]           1.12      0.23     0.77     1.65 1.00     1359     1942
+## Intercept[6]           1.92      0.23     1.57     2.45 1.00     1334     1923
+## symptom_severity       0.08      0.03     0.01     0.15 1.00     2771     2810
+## moanxiety_identity     0.13      0.07     0.03     0.28 1.00     1342     1801
 ## 
 ## Simplex Parameters: 
 ##                        Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-## moanxiety_identity1[1]     0.41      0.22     0.02     0.79 1.00     1702
-## moanxiety_identity1[2]     0.17      0.14     0.00     0.52 1.00     1933
-## moanxiety_identity1[3]     0.19      0.14     0.01     0.54 1.00     2687
-## moanxiety_identity1[4]     0.23      0.15     0.01     0.59 1.00     2241
+## moanxiety_identity1[1]     0.41      0.22     0.03     0.79 1.00     1693
+## moanxiety_identity1[2]     0.17      0.13     0.01     0.51 1.00     2891
+## moanxiety_identity1[3]     0.18      0.13     0.01     0.52 1.00     2579
+## moanxiety_identity1[4]     0.23      0.15     0.02     0.60 1.00     3236
 ##                        Tail_ESS
-## moanxiety_identity1[1]     2020
-## moanxiety_identity1[2]     1270
-## moanxiety_identity1[3]     2401
-## moanxiety_identity1[4]     1541
+## moanxiety_identity1[1]     2175
+## moanxiety_identity1[2]     1745
+## moanxiety_identity1[3]     2399
+## moanxiety_identity1[4]     2223
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
@@ -1672,9 +1730,21 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Rejecting initial value:
 ## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
+## Chain 1: Rejecting initial value:
+## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 1:   Stan can&#39;t start sampling from this initial value.
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.001842 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 18.42 seconds.
+## Chain 1: Gradient evaluation took 0.001412 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 14.12 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -1691,15 +1761,51 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 95.513 seconds (Warm-up)
-## Chain 1:                44.959 seconds (Sampling)
-## Chain 1:                140.472 seconds (Total)
+## Chain 1:  Elapsed Time: 95.548 seconds (Warm-up)
+## Chain 1:                51.108 seconds (Sampling)
+## Chain 1:                146.656 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
+## Chain 2: Rejecting initial value:
+## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 2:   Stan can&#39;t start sampling from this initial value.
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.001305 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 13.05 seconds.
+## Chain 2: Gradient evaluation took 0.001189 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 11.89 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -1716,9 +1822,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 90.459 seconds (Warm-up)
-## Chain 2:                46.597 seconds (Sampling)
-## Chain 2:                137.056 seconds (Total)
+## Chain 2:  Elapsed Time: 85.679 seconds (Warm-up)
+## Chain 2:                59.688 seconds (Sampling)
+## Chain 2:                145.367 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
@@ -1734,9 +1840,12 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Rejecting initial value:
 ## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.001164 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 11.64 seconds.
+## Chain 3: Gradient evaluation took 0.001306 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 13.06 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -1753,39 +1862,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 92.391 seconds (Warm-up)
-## Chain 3:                42.745 seconds (Sampling)
-## Chain 3:                135.136 seconds (Total)
+## Chain 3:  Elapsed Time: 86.942 seconds (Warm-up)
+## Chain 3:                40.961 seconds (Sampling)
+## Chain 3:                127.903 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
-## Chain 4: Rejecting initial value:
-## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 4:   Stan can&#39;t start sampling from this initial value.
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.001248 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 12.48 seconds.
+## Chain 4: Gradient evaluation took 0.001199 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 11.99 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -1802,9 +1887,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 96.528 seconds (Warm-up)
-## Chain 4:                41.866 seconds (Sampling)
-## Chain 4:                138.394 seconds (Total)
+## Chain 4:  Elapsed Time: 89.702 seconds (Warm-up)
+## Chain 4:                51.128 seconds (Sampling)
+## Chain 4:                140.83 seconds (Total)
 ## Chain 4:</code></pre>
 <pre class="r"><code>summary(model_ea_severity_mod)</code></pre>
 <pre><code>##  Family: cumulative 
@@ -1816,45 +1901,45 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                                     Estimate Est.Error l-95% CI u-95% CI Rhat
-## Intercept[1]                           -1.31      0.22    -1.65    -0.77 1.00
-## Intercept[2]                           -0.58      0.22    -0.89    -0.03 1.00
-## Intercept[3]                            0.08      0.22    -0.23     0.62 1.00
-## Intercept[4]                            0.41      0.22     0.10     0.94 1.00
-## Intercept[5]                            1.08      0.22     0.76     1.61 1.00
-## Intercept[6]                            1.88      0.23     1.54     2.43 1.00
-## symptom_severity                        0.14      0.12    -0.07     0.41 1.00
+## Intercept[1]                           -1.31      0.23    -1.64    -0.76 1.00
+## Intercept[2]                           -0.57      0.23    -0.88    -0.03 1.00
+## Intercept[3]                            0.09      0.23    -0.23     0.63 1.00
+## Intercept[4]                            0.41      0.23     0.10     0.95 1.00
+## Intercept[5]                            1.09      0.23     0.76     1.63 1.00
+## Intercept[6]                            1.89      0.23     1.55     2.45 1.00
+## symptom_severity                        0.14      0.12    -0.06     0.41 1.00
 ## moanxiety_identity                      0.13      0.06     0.03     0.27 1.00
 ## moanxiety_identity:symptom_severity    -0.02      0.04    -0.10     0.05 1.00
 ##                                     Bulk_ESS Tail_ESS
-## Intercept[1]                            1129     1341
-## Intercept[2]                            1129     1377
-## Intercept[3]                            1137     1362
-## Intercept[4]                            1142     1353
-## Intercept[5]                            1134     1377
-## Intercept[6]                            1165     1357
-## symptom_severity                        1336     1791
-## moanxiety_identity                      1194     1454
-## moanxiety_identity:symptom_severity     1416     1914
+## Intercept[1]                            1479     1700
+## Intercept[2]                            1485     1769
+## Intercept[3]                            1495     1937
+## Intercept[4]                            1500     1784
+## Intercept[5]                            1469     1713
+## Intercept[6]                            1571     1778
+## symptom_severity                        1495     1763
+## moanxiety_identity                      1639     1792
+## moanxiety_identity:symptom_severity     1448     1685
 ## 
 ## Simplex Parameters: 
 ##                                         Estimate Est.Error l-95% CI u-95% CI
-## moanxiety_identity1[1]                      0.39      0.21     0.03     0.77
-## moanxiety_identity1[2]                      0.16      0.13     0.00     0.48
+## moanxiety_identity1[1]                      0.39      0.22     0.02     0.77
+## moanxiety_identity1[2]                      0.16      0.13     0.00     0.50
 ## moanxiety_identity1[3]                      0.19      0.14     0.01     0.56
-## moanxiety_identity1[4]                      0.26      0.17     0.02     0.65
-## moanxiety_identity:symptom_severity1[1]     0.31      0.21     0.01     0.77
-## moanxiety_identity:symptom_severity1[2]     0.28      0.20     0.01     0.72
+## moanxiety_identity1[4]                      0.26      0.17     0.01     0.65
+## moanxiety_identity:symptom_severity1[1]     0.31      0.22     0.01     0.79
+## moanxiety_identity:symptom_severity1[2]     0.26      0.20     0.01     0.73
 ## moanxiety_identity:symptom_severity1[3]     0.20      0.18     0.01     0.64
-## moanxiety_identity:symptom_severity1[4]     0.22      0.17     0.01     0.63
+## moanxiety_identity:symptom_severity1[4]     0.23      0.18     0.01     0.65
 ##                                         Rhat Bulk_ESS Tail_ESS
-## moanxiety_identity1[1]                  1.00     1610     1681
-## moanxiety_identity1[2]                  1.00     2685     1723
-## moanxiety_identity1[3]                  1.00     2813     2315
-## moanxiety_identity1[4]                  1.00     2190     2180
-## moanxiety_identity:symptom_severity1[1] 1.00     3187     2656
-## moanxiety_identity:symptom_severity1[2] 1.00     3430     2800
-## moanxiety_identity:symptom_severity1[3] 1.00     2656     2632
-## moanxiety_identity:symptom_severity1[4] 1.00     4220     2489
+## moanxiety_identity1[1]                  1.00     1982     2283
+## moanxiety_identity1[2]                  1.00     3106     2031
+## moanxiety_identity1[3]                  1.00     3218     2371
+## moanxiety_identity1[4]                  1.00     2247     2285
+## moanxiety_identity:symptom_severity1[1] 1.00     2745     2220
+## moanxiety_identity:symptom_severity1[2] 1.00     3170     2087
+## moanxiety_identity:symptom_severity1[3] 1.00     2610     2532
+## moanxiety_identity:symptom_severity1[4] 1.00     3199     2648
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
@@ -1882,12 +1967,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Rejecting initial value:
 ## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 1:   Stan can&#39;t start sampling from this initial value.
-## Chain 1: Rejecting initial value:
-## Chain 1:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 1:   Stan can&#39;t start sampling from this initial value.
 ## Chain 1: 
-## Chain 1: Gradient evaluation took 0.001937 seconds
-## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 19.37 seconds.
+## Chain 1: Gradient evaluation took 0.001941 seconds
+## Chain 1: 1000 transitions using 10 leapfrog steps per transition would take 19.41 seconds.
 ## Chain 1: Adjust your expectations accordingly!
 ## Chain 1: 
 ## Chain 1: 
@@ -1904,9 +1986,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 1: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 1: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 1: 
-## Chain 1:  Elapsed Time: 208.712 seconds (Warm-up)
-## Chain 1:                106.738 seconds (Sampling)
-## Chain 1:                315.45 seconds (Total)
+## Chain 1:  Elapsed Time: 212.197 seconds (Warm-up)
+## Chain 1:                98.153 seconds (Sampling)
+## Chain 1:                310.35 seconds (Total)
 ## Chain 1: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 2).
@@ -1925,27 +2007,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Rejecting initial value:
 ## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
-## Chain 2: Rejecting initial value:
-## Chain 2:   Log probability evaluates to log(0), i.e. negative infinity.
-## Chain 2:   Stan can&#39;t start sampling from this initial value.
 ## Chain 2: 
-## Chain 2: Gradient evaluation took 0.001728 seconds
-## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 17.28 seconds.
+## Chain 2: Gradient evaluation took 0.001477 seconds
+## Chain 2: 1000 transitions using 10 leapfrog steps per transition would take 14.77 seconds.
 ## Chain 2: Adjust your expectations accordingly!
 ## Chain 2: 
 ## Chain 2: 
@@ -1962,9 +2026,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 2: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 2: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 2: 
-## Chain 2:  Elapsed Time: 184.256 seconds (Warm-up)
-## Chain 2:                111.148 seconds (Sampling)
-## Chain 2:                295.404 seconds (Total)
+## Chain 2:  Elapsed Time: 196.527 seconds (Warm-up)
+## Chain 2:                93.459 seconds (Sampling)
+## Chain 2:                289.986 seconds (Total)
 ## Chain 2: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 3).
@@ -2013,9 +2077,15 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Rejecting initial value:
 ## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
+## Chain 3: Rejecting initial value:
+## Chain 3:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 3:   Stan can&#39;t start sampling from this initial value.
 ## Chain 3: 
-## Chain 3: Gradient evaluation took 0.001733 seconds
-## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 17.33 seconds.
+## Chain 3: Gradient evaluation took 0.001487 seconds
+## Chain 3: 1000 transitions using 10 leapfrog steps per transition would take 14.87 seconds.
 ## Chain 3: Adjust your expectations accordingly!
 ## Chain 3: 
 ## Chain 3: 
@@ -2032,18 +2102,39 @@ round(correlations$r, 2)</code></pre>
 ## Chain 3: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 3: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 3: 
-## Chain 3:  Elapsed Time: 222.093 seconds (Warm-up)
-## Chain 3:                109.048 seconds (Sampling)
-## Chain 3:                331.141 seconds (Total)
+## Chain 3:  Elapsed Time: 202.713 seconds (Warm-up)
+## Chain 3:                103.539 seconds (Sampling)
+## Chain 3:                306.252 seconds (Total)
 ## Chain 3: 
 ## 
 ## SAMPLING FOR MODEL &#39;anon_model&#39; NOW (CHAIN 4).
 ## Chain 4: Rejecting initial value:
 ## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
 ## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
+## Chain 4: Rejecting initial value:
+## Chain 4:   Log probability evaluates to log(0), i.e. negative infinity.
+## Chain 4:   Stan can&#39;t start sampling from this initial value.
 ## Chain 4: 
-## Chain 4: Gradient evaluation took 0.001687 seconds
-## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 16.87 seconds.
+## Chain 4: Gradient evaluation took 0.001659 seconds
+## Chain 4: 1000 transitions using 10 leapfrog steps per transition would take 16.59 seconds.
 ## Chain 4: Adjust your expectations accordingly!
 ## Chain 4: 
 ## Chain 4: 
@@ -2060,9 +2151,9 @@ round(correlations$r, 2)</code></pre>
 ## Chain 4: Iteration: 1800 / 2000 [ 90%]  (Sampling)
 ## Chain 4: Iteration: 2000 / 2000 [100%]  (Sampling)
 ## Chain 4: 
-## Chain 4:  Elapsed Time: 221.183 seconds (Warm-up)
-## Chain 4:                106.115 seconds (Sampling)
-## Chain 4:                327.298 seconds (Total)
+## Chain 4:  Elapsed Time: 227.248 seconds (Warm-up)
+## Chain 4:                108.2 seconds (Sampling)
+## Chain 4:                335.448 seconds (Total)
 ## Chain 4:</code></pre>
 <pre class="r"><code>summary(model_ea_duration_mod)</code></pre>
 <pre><code>##  Family: cumulative 
@@ -2074,79 +2165,79 @@ round(correlations$r, 2)</code></pre>
 ## 
 ## Population-Level Effects: 
 ##                                       Estimate Est.Error l-95% CI u-95% CI Rhat
-## Intercept[1]                             -1.30      0.28    -1.80    -0.68 1.00
-## Intercept[2]                             -0.57      0.27    -1.07     0.05 1.00
-## Intercept[3]                              0.09      0.27    -0.39     0.70 1.00
-## Intercept[4]                              0.42      0.27    -0.07     1.02 1.00
-## Intercept[5]                              1.10      0.27     0.61     1.71 1.00
-## Intercept[6]                              1.90      0.28     1.40     2.51 1.00
-## symptom_severity                          0.07      0.04    -0.01     0.14 1.00
-## moanxiety_identity                       -0.02      0.11    -0.26     0.18 1.00
-## moanxiety_duration                        0.01      0.04    -0.08     0.09 1.00
-## moanxiety_identity:moanxiety_duration     0.02      0.02    -0.01     0.06 1.00
+## Intercept[1]                             -1.32      0.26    -1.80    -0.76 1.00
+## Intercept[2]                             -0.59      0.26    -1.06    -0.04 1.00
+## Intercept[3]                              0.08      0.26    -0.40     0.63 1.00
+## Intercept[4]                              0.40      0.26    -0.08     0.96 1.00
+## Intercept[5]                              1.08      0.26     0.59     1.64 1.00
+## Intercept[6]                              1.88      0.26     1.38     2.44 1.00
+## symptom_severity                          0.07      0.04    -0.00     0.14 1.00
+## moanxiety_identity                       -0.03      0.10    -0.27     0.16 1.00
+## moanxiety_duration                        0.00      0.04    -0.09     0.08 1.00
+## moanxiety_identity:moanxiety_duration     0.02      0.02    -0.00     0.06 1.00
 ##                                       Bulk_ESS Tail_ESS
-## Intercept[1]                              1037     1540
-## Intercept[2]                              1027     1546
-## Intercept[3]                              1023     1588
-## Intercept[4]                              1033     1505
-## Intercept[5]                              1033     1512
-## Intercept[6]                              1060     1500
-## symptom_severity                          4274     3220
-## moanxiety_identity                         819     1365
-## moanxiety_duration                         898     1901
-## moanxiety_identity:moanxiety_duration      766     1147
+## Intercept[1]                               871     1572
+## Intercept[2]                               860     1610
+## Intercept[3]                               864     1623
+## Intercept[4]                               874     1638
+## Intercept[5]                               889     1631
+## Intercept[6]                               920     1725
+## symptom_severity                          4209     2987
+## moanxiety_identity                         713      992
+## moanxiety_duration                         747     1625
+## moanxiety_identity:moanxiety_duration      633      888
 ## 
 ## Simplex Parameters: 
 ##                                           Estimate Est.Error l-95% CI u-95% CI
-## moanxiety_identity1[1]                        0.28      0.21     0.01     0.75
-## moanxiety_identity1[2]                        0.21      0.17     0.01     0.63
-## moanxiety_identity1[3]                        0.22      0.17     0.01     0.65
-## moanxiety_identity1[4]                        0.29      0.20     0.01     0.73
-## moanxiety_duration1[1]                        0.14      0.12     0.01     0.44
-## moanxiety_duration1[2]                        0.13      0.11     0.00     0.41
-## moanxiety_duration1[3]                        0.12      0.11     0.00     0.39
+## moanxiety_identity1[1]                        0.27      0.21     0.01     0.73
+## moanxiety_identity1[2]                        0.22      0.17     0.01     0.63
+## moanxiety_identity1[3]                        0.23      0.18     0.01     0.67
+## moanxiety_identity1[4]                        0.29      0.21     0.01     0.75
+## moanxiety_duration1[1]                        0.14      0.12     0.00     0.44
+## moanxiety_duration1[2]                        0.13      0.11     0.00     0.42
+## moanxiety_duration1[3]                        0.12      0.10     0.00     0.38
 ## moanxiety_duration1[4]                        0.12      0.10     0.00     0.38
-## moanxiety_duration1[5]                        0.11      0.10     0.00     0.37
-## moanxiety_duration1[6]                        0.11      0.10     0.00     0.38
-## moanxiety_duration1[7]                        0.13      0.11     0.00     0.41
-## moanxiety_duration1[8]                        0.13      0.11     0.01     0.41
-## moanxiety_identity:moanxiety_duration1[1]     0.31      0.20     0.02     0.72
-## moanxiety_identity:moanxiety_duration1[2]     0.19      0.15     0.01     0.54
-## moanxiety_identity:moanxiety_duration1[3]     0.21      0.14     0.02     0.56
-## moanxiety_identity:moanxiety_duration1[4]     0.29      0.16     0.03     0.65
-## moanxiety_identity:moanxiety_duration2[1]     0.15      0.12     0.00     0.45
+## moanxiety_duration1[5]                        0.11      0.10     0.00     0.39
+## moanxiety_duration1[6]                        0.12      0.11     0.00     0.39
+## moanxiety_duration1[7]                        0.14      0.11     0.00     0.42
+## moanxiety_duration1[8]                        0.13      0.11     0.00     0.40
+## moanxiety_identity:moanxiety_duration1[1]     0.32      0.19     0.02     0.71
+## moanxiety_identity:moanxiety_duration1[2]     0.18      0.13     0.01     0.51
+## moanxiety_identity:moanxiety_duration1[3]     0.21      0.15     0.02     0.57
+## moanxiety_identity:moanxiety_duration1[4]     0.29      0.16     0.02     0.64
+## moanxiety_identity:moanxiety_duration2[1]     0.14      0.12     0.01     0.45
 ## moanxiety_identity:moanxiety_duration2[2]     0.13      0.11     0.00     0.40
-## moanxiety_identity:moanxiety_duration2[3]     0.10      0.09     0.00     0.32
-## moanxiety_identity:moanxiety_duration2[4]     0.11      0.09     0.00     0.35
+## moanxiety_identity:moanxiety_duration2[3]     0.10      0.09     0.00     0.33
+## moanxiety_identity:moanxiety_duration2[4]     0.11      0.09     0.00     0.33
 ## moanxiety_identity:moanxiety_duration2[5]     0.08      0.08     0.00     0.29
-## moanxiety_identity:moanxiety_duration2[6]     0.07      0.07     0.00     0.27
-## moanxiety_identity:moanxiety_duration2[7]     0.19      0.12     0.01     0.47
+## moanxiety_identity:moanxiety_duration2[6]     0.07      0.08     0.00     0.28
+## moanxiety_identity:moanxiety_duration2[7]     0.19      0.13     0.01     0.48
 ## moanxiety_identity:moanxiety_duration2[8]     0.17      0.12     0.01     0.45
 ##                                           Rhat Bulk_ESS Tail_ESS
-## moanxiety_identity1[1]                    1.00     2450     1779
-## moanxiety_identity1[2]                    1.00     3287     2217
-## moanxiety_identity1[3]                    1.00     4077     2893
-## moanxiety_identity1[4]                    1.00     2646     2899
-## moanxiety_duration1[1]                    1.00     3124     2076
-## moanxiety_duration1[2]                    1.00     3368     1706
-## moanxiety_duration1[3]                    1.00     3863     1835
-## moanxiety_duration1[4]                    1.00     3195     1745
-## moanxiety_duration1[5]                    1.00     3023     2711
-## moanxiety_duration1[6]                    1.00     2344     1747
-## moanxiety_duration1[7]                    1.00     3265     2773
-## moanxiety_duration1[8]                    1.00     4367     3230
-## moanxiety_identity:moanxiety_duration1[1] 1.00     3148     2176
-## moanxiety_identity:moanxiety_duration1[2] 1.00     3005     1908
-## moanxiety_identity:moanxiety_duration1[3] 1.00     3742     2255
-## moanxiety_identity:moanxiety_duration1[4] 1.00     3226     2100
-## moanxiety_identity:moanxiety_duration2[1] 1.00     2808     1403
-## moanxiety_identity:moanxiety_duration2[2] 1.00     4500     2109
-## moanxiety_identity:moanxiety_duration2[3] 1.00     2970     1856
-## moanxiety_identity:moanxiety_duration2[4] 1.00     4057     2117
-## moanxiety_identity:moanxiety_duration2[5] 1.00     2529     1575
-## moanxiety_identity:moanxiety_duration2[6] 1.00     2718     1889
-## moanxiety_identity:moanxiety_duration2[7] 1.00     3032     2460
-## moanxiety_identity:moanxiety_duration2[8] 1.00     3579     2398
+## moanxiety_identity1[1]                    1.00     2812     2274
+## moanxiety_identity1[2]                    1.00     3554     2346
+## moanxiety_identity1[3]                    1.00     3583     2384
+## moanxiety_identity1[4]                    1.00     2166     2371
+## moanxiety_duration1[1]                    1.00     3779     2229
+## moanxiety_duration1[2]                    1.00     2906     1886
+## moanxiety_duration1[3]                    1.00     4183     2097
+## moanxiety_duration1[4]                    1.00     3496     2146
+## moanxiety_duration1[5]                    1.00     3314     2527
+## moanxiety_duration1[6]                    1.00     2388     2354
+## moanxiety_duration1[7]                    1.00     3497     3152
+## moanxiety_duration1[8]                    1.00     4165     2645
+## moanxiety_identity:moanxiety_duration1[1] 1.00     2542     1710
+## moanxiety_identity:moanxiety_duration1[2] 1.00     2731     1867
+## moanxiety_identity:moanxiety_duration1[3] 1.00     3073     2366
+## moanxiety_identity:moanxiety_duration1[4] 1.00     2496     2192
+## moanxiety_identity:moanxiety_duration2[1] 1.00     2883     2021
+## moanxiety_identity:moanxiety_duration2[2] 1.00     3068     1740
+## moanxiety_identity:moanxiety_duration2[3] 1.00     3121     1445
+## moanxiety_identity:moanxiety_duration2[4] 1.00     2497     1231
+## moanxiety_identity:moanxiety_duration2[5] 1.00     2829     1802
+## moanxiety_identity:moanxiety_duration2[6] 1.00     2728     2192
+## moanxiety_identity:moanxiety_duration2[7] 1.00     3459     2232
+## moanxiety_identity:moanxiety_duration2[8] 1.00     3723     2969
 ## 
 ## Family Specific Parameters: 
 ##      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS

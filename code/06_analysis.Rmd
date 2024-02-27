@@ -11,6 +11,8 @@ library(psych)
 
 load(here("anlys_df.RData"))
 
+set.seed(6680142)
+
 df <- anlys_df %>%
   # Select and rename variables for analysis
   select(
