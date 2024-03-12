@@ -27,6 +27,8 @@ df <- anlys_df %>%
     anxiety_identity = anxiety_identity + 1,
     # Recode situational avoidance to start at 1, per pre-registration
     situational_avoidance = situational_avoidance + 1,
+    # Recode anxiety duration to start at 1, per manuscript
+    anxiety_duration = anxiety_duration + 1,
     # Reverse-code experiential avoidance such that higher values = more avoidance
     experiential_avoidance = 8 - experiential_avoidance,
     # Create symptom severity groups for plotting
