@@ -158,14 +158,21 @@ df %>%
       T ~ value
     )
   ) %>%
-  ggplot(aes(anxiety_identity, value, group = symptom_severity_group, color = symptom_severity_group)) +
+  ggplot(aes(anxiety_identity, value, group = symptom_severity_group, linetype = symptom_severity_group, color = symptom_severity_group)) +
   stat_summary(alpha = .25) +
   geom_smooth(method = "lm", formula = "y ~ x", se = F) +
   facet_wrap(~ name, scales = "free") +
-  scale_x_continuous(name = "Anxiety Identity") +
-  scale_color_discrete(
+  scale_x_continuous(name = "Anxiety Identity Centrality") +
+  scale_color_manual(
     name = "Anxiety Symptom Severity",
-    labels = c("Low (1 S.D. or More Below Mean)", "Medium (Within 1 S.D. of Mean)", "High (1 S.D. or More Above Mean)"),
+    labels = c("1 SD or More Below Mean", "Within 1 SD of Mean", "1 SD or More Above Mean"),
+    values = c("#56B4E9", "#E69F00", "#009E73"),
+    guide = guide_legend(reverse = T)
+  ) +
+  scale_linetype_manual(
+    name = "Anxiety Symptom Severity",
+    labels = c("1 SD or More Below Mean", "Within 1 SD of Mean", "1 SD or More Above Mean"),
+    values = c(4, 2, 1),
     guide = guide_legend(reverse = T)
   ) +
   ggh4x::facetted_pos_scales(y = list(name == "Situational Avoidance" ~ scale_y_continuous(name = "Avoidance", limits = c(1, 5)),
