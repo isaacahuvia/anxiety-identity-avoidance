@@ -1,0 +1,187 @@
+---
+title: "Anxiety Identity & Coping Analysis"
+output: html_document
+---
+
+```{r, echo = F}
+# R version 4.1.2
+library(tidyverse) #2.0.0
+library(here) #1.0.1
+library(brms) #2.20.4
+library(psych) #2.3.9
+
+load(here("anlys_df.RData"))
+
+set.seed(6680142)
+
+df <- anlys_df %>%
+  # Select and rename variables for analysis
+  select(
+    anxiety_identity = anxiety_identity_rev,
+    symptom_severity = oa_sx_sev_m_std,
+    situational_avoidance = avo,
+    experiential_avoidance = comp_act_willing,
+    anxiety_duration
+  ) %>%
+  mutate(
+    # Recode anxiety identity to start at 1, per pre-registration
+    anxiety_identity = anxiety_identity + 1,
+    # Recode situational avoidance to start at 1, per pre-registration
+    situational_avoidance = situational_avoidance + 1,
+    # Recode anxiety duration to start at 1, per manuscript
+    anxiety_duration = anxiety_duration + 1,
+    # Reverse-code experiential avoidance such that higher values = more avoidance
+    experiential_avoidance = 8 - experiential_avoidance,
+    # Create symptom severity groups for plotting
+    symptom_severity_group = cut(symptom_severity, c(-9, -1, 1, 9)),
+    # Create ordered factor versions of DVs for regressions
+    situational_avoidance_fct = factor(situational_avoidance, ordered = T),
+    experiential_avoidance_fct = factor(experiential_avoidance, ordered = T)
+  )
+```
+
+## Descriptive Statistis
+
+```{r}
+numeric_variables <- c(
+  "anxiety_identity", 
+  "situational_avoidance",
+  "experiential_avoidance",
+  "symptom_severity",
+  "anxiety_duration"
+)
+
+# Histograms
+for(x in numeric_variables) hist(df[[x]])
+
+# Correlations
+correlations <- df %>%
+  select(all_of(numeric_variables)) %>%
+  corr.test(method = "spearman", use = "pairwise.complete.obs")
+
+round(correlations$r, 2)
+round(correlations$p, 3)
+```
+
+## Regressions
+
+### Situational Avoidance
+
+```{r}
+model_ba <- brm(
+  data = df, 
+  formula = situational_avoidance_fct ~ mo(anxiety_identity), 
+  family = cumulative("probit")
+)
+saveRDS(model_ba, here("models", "model_ba.rds"))
+summary(model_ba)
+
+model_ba_control <- brm(
+  data = df, 
+  formula = situational_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
+  family = cumulative("probit")
+)
+saveRDS(model_ba_control, here("models", "model_ba_control.rds"))
+summary(model_ba_control)
+
+model_ba_severity_mod <- brm(
+  data = df, 
+  formula = situational_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
+  family = cumulative("probit")
+)
+saveRDS(model_ba_severity_mod, here("models", "model_ba_severity_mod.rds"))
+summary(model_ba_severity_mod)
+
+model_ba_duration_mod <- brm(
+  data = df, 
+  formula = situational_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
+  family = cumulative("probit")
+)
+saveRDS(model_ba_duration_mod, here("models", "model_ba_duration_mod.rds"))
+summary(model_ba_duration_mod)
+```
+
+### Experiential Avoidance
+
+```{r}
+model_ea <- brm(
+  data = df, 
+  formula = experiential_avoidance_fct ~ mo(anxiety_identity), 
+  family = cumulative("probit")
+)
+saveRDS(model_ea, here("models", "model_ea.rds"))
+summary(model_ea)
+
+model_ea_control <- brm(
+  data = df, 
+  formula = experiential_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
+  family = cumulative("probit")
+)
+saveRDS(model_ea_control, here("models", "model_ea_control.rds"))
+summary(model_ea_control)
+
+model_ea_severity_mod <- brm(
+  data = df, 
+  formula = experiential_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
+  family = cumulative("probit")
+)
+saveRDS(model_ea_severity_mod, here("models", "model_ea_severity_mod.rds"))
+summary(model_ea_severity_mod)
+
+model_ea_duration_mod <- brm(
+  data = df, 
+  formula = experiential_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
+  family = cumulative("probit")
+)
+saveRDS(model_ea_duration_mod, here("models", "model_ea_duration_mod.rds"))
+summary(model_ea_duration_mod)
+```
+
+Figures.
+
+```{r}
+df %>%
+  pivot_longer(c(situational_avoidance, experiential_avoidance)) %>%
+  mutate(
+    # Rename variables
+    name = recode_factor(
+      name,
+      "situational_avoidance" = "Situational Avoidance",
+      "experiential_avoidance" = "Experiential Avoidance"
+    ),
+    # Remove points where no SE can be calculated
+    value = case_when(
+      name == "Situational Avoidance" & anxiety_identity == 1 & value == 1 ~ NA,
+      name == "Situational Avoidance" & anxiety_identity == 2 & value == 5 ~ NA,
+      name == "Experiential Avoidance" & anxiety_identity == 1 & value == 1 ~ NA,
+      name == "Experiential Avoidance" & anxiety_identity == 2 & value == 7 ~ NA,
+      T ~ value
+    )
+  ) %>%
+  ggplot(aes(anxiety_identity, value, group = symptom_severity_group, linetype = symptom_severity_group, color = symptom_severity_group)) +
+  stat_summary(alpha = .25) +
+  geom_smooth(method = "lm", formula = "y ~ x", se = F) +
+  facet_wrap(~ name, scales = "free") +
+  scale_x_continuous(name = "Anxiety Identity Centrality") +
+  scale_color_manual(
+    name = "Anxiety Symptom Severity",
+    labels = c("1 SD or More Below Mean", "Within 1 SD of Mean", "1 SD or More Above Mean"),
+    values = c("#56B4E9", "#E69F00", "#009E73"),
+    guide = guide_legend(reverse = T)
+  ) +
+  scale_linetype_manual(
+    name = "Anxiety Symptom Severity",
+    labels = c("1 SD or More Below Mean", "Within 1 SD of Mean", "1 SD or More Above Mean"),
+    values = c(4, 2, 1),
+    guide = guide_legend(reverse = T)
+  ) +
+  ggh4x::facetted_pos_scales(y = list(name == "Situational Avoidance" ~ scale_y_continuous(name = "Avoidance", limits = c(1, 5)),
+                                      name == "Experiential Avoidance" ~ scale_y_continuous(name = "Avoidance", limits = c(1, 7), breaks = 1:7))) +
+  theme_classic()
+
+ggsave(filename = here("figures", "Avoidance by Identity.png"),
+       width = 8,
+       height = 4,
+       units = "in",
+       dpi = 1200)
+```
