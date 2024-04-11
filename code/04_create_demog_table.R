@@ -80,7 +80,7 @@ compute_desc <- function(df) {
   num_res_pna <- data.frame(label = "Prefer not to answer: n (%)",
                             value = paste0(sum(is.na(df$age)),
                                            " (",
-                                           format(round(sum(is.na(df$age))/length(df$age), 1),
+                                           format(round((sum(is.na(df$age))/length(df$age))*100, 1),
                                                   nsmall = 1, trim = TRUE),
                                            ")"))
   
