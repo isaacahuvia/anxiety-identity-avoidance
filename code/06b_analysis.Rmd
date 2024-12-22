@@ -4,7 +4,10 @@ output: html_document
 ---
 
 ```{r, echo = F}
-# R version 4.1.2
+# R version 4.1.2 (to install, see https://cran.r-project.org/bin/windows/base/old/ )
+
+# To install and load package versions below, see "06a_install_analysis_pkgs.R"
+
 library(tidyverse) #2.0.0
 library(here) #1.0.1
 library(brms) #2.20.4
