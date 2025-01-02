@@ -68,39 +68,43 @@ round(correlations$p, 3)
 ### Situational Avoidance
 
 ```{r}
-model_ba <- brm(
-  data = df, 
-  formula = situational_avoidance_fct ~ mo(anxiety_identity), 
-  family = cumulative("probit")
-)
-saveRDS(model_ba, here("models", "model_ba.rds"))
+# model_ba <- brm(
+#   data = df, 
+#   formula = situational_avoidance_fct ~ mo(anxiety_identity), 
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ba, here("models", "model_ba.rds"))
+model_ba <- readRDS(here("models", "model_ba.rds"))
 summary(model_ba)
 pp_check(model_ba)
 
-model_ba_control <- brm(
-  data = df, 
-  formula = situational_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
-  family = cumulative("probit")
-)
-saveRDS(model_ba_control, here("models", "model_ba_control.rds"))
+# model_ba_control <- brm(
+#   data = df, 
+#   formula = situational_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ba_control, here("models", "model_ba_control.rds"))
+model_ba_control <- readRDS(here("models", "model_ba_control.rds"))
 summary(model_ba_control)
 pp_check(model_ba_control)
 
-model_ba_severity_mod <- brm(
-  data = df, 
-  formula = situational_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
-  family = cumulative("probit")
-)
-saveRDS(model_ba_severity_mod, here("models", "model_ba_severity_mod.rds"))
+# model_ba_severity_mod <- brm(
+#   data = df, 
+#   formula = situational_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ba_severity_mod, here("models", "model_ba_severity_mod.rds"))
+model_ba_severity_mod <- readRDS(here("models", "model_ba_severity_mod.rds"))
 summary(model_ba_severity_mod)
 pp_check(model_ba_severity_mod)
 
-model_ba_duration_mod <- brm(
-  data = df, 
-  formula = situational_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
-  family = cumulative("probit")
-)
-saveRDS(model_ba_duration_mod, here("models", "model_ba_duration_mod.rds"))
+# model_ba_duration_mod <- brm(
+#   data = df, 
+#   formula = situational_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ba_duration_mod, here("models", "model_ba_duration_mod.rds"))
+model_ba_duration_mod <- readRDS(here("models", "model_ba_duration_mod.rds"))
 summary(model_ba_duration_mod)
 pp_check(model_ba_duration_mod)
 ```
@@ -108,39 +112,43 @@ pp_check(model_ba_duration_mod)
 ### Experiential Avoidance
 
 ```{r}
-model_ea <- brm(
-  data = df, 
-  formula = experiential_avoidance_fct ~ mo(anxiety_identity), 
-  family = cumulative("probit")
-)
-saveRDS(model_ea, here("models", "model_ea.rds"))
+# model_ea <- brm(
+#   data = df, 
+#   formula = experiential_avoidance_fct ~ mo(anxiety_identity), 
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ea, here("models", "model_ea.rds"))
+model_ea <- readRDS(here("models", "model_ea.rds"))
 summary(model_ea)
 pp_check(model_ea)
 
-model_ea_control <- brm(
-  data = df, 
-  formula = experiential_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
-  family = cumulative("probit")
-)
-saveRDS(model_ea_control, here("models", "model_ea_control.rds"))
+# model_ea_control <- brm(
+#   data = df, 
+#   formula = experiential_avoidance_fct ~ mo(anxiety_identity) + symptom_severity,
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ea_control, here("models", "model_ea_control.rds"))
+model_ea_control <- readRDS(here("models", "model_ea_control.rds"))
 summary(model_ea_control)
 pp_check(model_ea_control)
 
-model_ea_severity_mod <- brm(
-  data = df, 
-  formula = experiential_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
-  family = cumulative("probit")
-)
-saveRDS(model_ea_severity_mod, here("models", "model_ea_severity_mod.rds"))
+# model_ea_severity_mod <- brm(
+#   data = df, 
+#   formula = experiential_avoidance_fct ~ mo(anxiety_identity)*symptom_severity, 
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ea_severity_mod, here("models", "model_ea_severity_mod.rds"))
+model_ea_severity_mod <- readRDS(here("models", "model_ea_severity_mod.rds"))
 summary(model_ea_severity_mod)
 pp_check(model_ea_severity_mod)
 
-model_ea_duration_mod <- brm(
-  data = df, 
-  formula = experiential_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
-  family = cumulative("probit")
-)
-saveRDS(model_ea_duration_mod, here("models", "model_ea_duration_mod.rds"))
+# model_ea_duration_mod <- brm(
+#   data = df, 
+#   formula = experiential_avoidance_fct ~ mo(anxiety_identity)*mo(anxiety_duration) + symptom_severity, 
+#   family = cumulative("probit")
+# )
+# saveRDS(model_ea_duration_mod, here("models", "model_ea_duration_mod.rds"))
+model_ea_duration_mod <- readRDS(here("models", "model_ea_duration_mod.rds"))
 summary(model_ea_duration_mod)
 pp_check(model_ea_duration_mod)
 ```
@@ -149,12 +157,13 @@ pp_check(model_ea_duration_mod)
 
 ```{r}
 # Estimate both DVs simultaneously, to compare posterior distributions of estimates
-model_mv_control <- brm(
-  data = df,
-  formula = mvbind(experiential_avoidance_fct, situational_avoidance_fct) ~ mo(anxiety_identity) + symptom_severity,
-  family = cumulative("probit")
-)
-saveRDS(model_mv_control, here("models", "model_mv_control.rds"))
+# model_mv_control <- brm(
+#   data = df,
+#   formula = mvbind(experiential_avoidance_fct, situational_avoidance_fct) ~ mo(anxiety_identity) + symptom_severity,
+#   family = cumulative("probit")
+# )
+# saveRDS(model_mv_control, here("models", "model_mv_control.rds"))
+model_mv_control <- readRDS(here("models", "model_mv_control.rds"))
 
 # Compare posterior distributions of effect estimates
 posterior_draws <- model_mv_control %>%
@@ -174,6 +183,13 @@ posterior_draws %>%
   ggplot(aes(x = difference)) +
   geom_density(fill = "skyblue", alpha = 0.5) +
   geom_vline(xintercept = 0, linetype = "dashed")
+
+# Formal test of difference (same as above but provides CI)
+test_diff <- hypothesis(
+  model_mv_control,
+  "bsp_situationalavoidancefct_moanxiety_identity = bsp_experientialavoidancefct_moanxiety_identity",
+  class = NULL
+)
 ```
 
 ## Figures
@@ -235,14 +251,18 @@ ggsave(filename = here("figures", "Avoidance by Identity - Raw Data.png"),
 plot_data_ba <- conditional_effects(
   model_ba_control,
   effects = "anxiety_identity",
-  method = "posterior_linpred"
+  method = "posterior_linpred",
+  condition = data.frame(symptom_severity = 0),
+  robust = F
 ) %>%
   pluck("anxiety_identity")
 
 plot_data_ea <- conditional_effects(
   model_ea_control,
   effects = "anxiety_identity",
-  method = "posterior_linpred"
+  method = "posterior_linpred",
+  condition = data.frame(symptom_severity = 0),
+  robust = F
 ) %>%
   pluck("anxiety_identity")
 
@@ -258,9 +278,10 @@ plot_data_cleaned <- plot_data_combined %>%
   mutate(
     dv = case_match(
       model,
-      "plot_data_ba" ~ "Behavioral Avoidance",
+      "plot_data_ba" ~ "Situational Avoidance",
       "plot_data_ea" ~ "Experiential Avoidance"
-    )
+    ) %>%
+      factor(levels = c("Situational Avoidance", "Experiential Avoidance"))
   ) %>%
   select(
     dv, anxiety_identity, estimate__, lower__, upper__
@@ -271,7 +292,7 @@ plot_data_cleaned %>%
   geom_line(size = 1) +
   geom_ribbon(aes(ymin = lower__, ymax = upper__), alpha = .1) +
   scale_x_continuous(name = "Anxiety Identity Centrality") +
-  scale_y_continuous(name = "Avoidanct Coping (S.D. Units)") +
+  scale_y_continuous(name = "Avoidanct Coping (SD Units)") +
   facet_wrap(~ dv) +
   theme_classic()
 
