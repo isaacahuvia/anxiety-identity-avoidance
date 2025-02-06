@@ -297,8 +297,8 @@ plot_data_cleaned %>%
   theme_classic()
 
 ggsave(filename = here("figures", "Avoidance by Identity - Model Data.png"),
-       width = 8,
-       height = 4,
+       width = 6,
+       height = 3,
        units = "in",
        dpi = 1200)
 ```
